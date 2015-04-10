@@ -1,0 +1,11 @@
+gcusbadapte_osx
+
+
+This project builds two kernel extensions for OSX to support the WUP-028 USB
+GameCube adaper. The first, gcusbadapter_raw.kext is a codeless kernel extension
+that allows user-space drivers to function. This extension can be used with
+the Dolphin emulator for native support. The second kernel exension,
+gcusbadapter.kext exposes the WUP-028 as 4 virtual gamepads with force-feedback
+support. The virual gamepads are created/destroyed as controllers are plugged in/
+unplugged from the WUP-028.
+
