@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.aaeno.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>KEXT</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>IOKitPersonalities</key>
+	<dict>
+		<key>WUP-028 USB Adapter Raw</key>
+		<dict>
+			<key>bInterfaceNumber</key>
+			<integer>0</integer>
+			<key>bConfigurationValue</key>
+			<integer>1</integer>
+			<key>idProduct</key>
+			<integer>823</integer>
+			<key>idVendor</key>
+			<integer>1406</integer>
+			<key>IOProbeScore</key>
+			<integer>9000</integer>
+			<key>CFBundleIdentifier</key>
+			<string>com.aaeno.$(PRODUCT_NAME:rfc1034identifier)</string>
+			<key>IOClass</key>
+			<string>IOService</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBInterface</string>
+		</dict>
+	</dict>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2015 None. All rights reserved.</string>
+	<key>OSBundleLibraries</key>
+	<dict>
+		<key>com.apple.kpi.iokit</key>
+		<string>14.3</string>
+		<key>com.apple.kpi.libkern</key>
+		<string>14.3</string>
+	</dict>
+</dict>
+</plist>

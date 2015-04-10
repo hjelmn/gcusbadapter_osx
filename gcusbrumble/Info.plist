@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.eno.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>CFPlugInFactories</key>
+	<dict>
+		<key>6b8b247d-a637-4e36-b58d-4a2e573cf9f4</key>
+		<string>gcusbrumble_factory</string>
+	</dict>
+	<key>CFPlugInTypes</key>
+	<dict>
+		<key>f4545ce5-bf5b-11d6-a4bb-0003933e3e3e</key>
+		<array>
+			<string>6b8b247d-a637-4e36-b58d-4a2e573cf9f4</string>
+		</array>
+	</dict>
+	<key>CSResourcesFileMapped</key>
+	<string>yes</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2015 None. All rights reserved.</string>
+	<key>Debug</key>
+	<integer>0</integer>
+</dict>
+</plist>

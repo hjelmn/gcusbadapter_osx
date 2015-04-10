@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		69A99A681AC8E6A9008071EC /* gcusbadapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 69A99A671AC8E6A9008071EC /* gcusbadapter.h */; };
+		69A99A6A1AC8E6A9008071EC /* gcusbadapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69A99A691AC8E6A9008071EC /* gcusbadapter.cpp */; };
+		69E62E6E1AD5C83400F7B4EE /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E62E671AD5C6A100F7B4EE /* CoreFoundation.framework */; };
+		69E62E751AD5C83400F7B4EE /* gcusbrumble.h in Headers */ = {isa = PBXBuildFile; fileRef = 69E62E741AD5C83400F7B4EE /* gcusbrumble.h */; };
+		69E62E771AD5C83400F7B4EE /* gcusbrumblePriv.h in Headers */ = {isa = PBXBuildFile; fileRef = 69E62E761AD5C83400F7B4EE /* gcusbrumblePriv.h */; };
+		69E62E791AD5C83400F7B4EE /* gcusbrumble.c in Sources */ = {isa = PBXBuildFile; fileRef = 69E62E781AD5C83400F7B4EE /* gcusbrumble.c */; };
+		69E62E7E1AD5C93D00F7B4EE /* ForceFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E62E7D1AD5C93D00F7B4EE /* ForceFeedback.framework */; };
+		69E932A11AD82EF900AFCD10 /* gcusbrumble.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69E62E6D1AD5C83400F7B4EE /* gcusbrumble.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		69E932AD1AD83F0700AFCD10 /* gcusbadapter_raw.c in Sources */ = {isa = PBXBuildFile; fileRef = 69E932AC1AD83F0700AFCD10 /* gcusbadapter_raw.c */; };
+		69E932B21AD83F4300AFCD10 /* Info_raw.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69E932B11AD83F4300AFCD10 /* Info_raw.plist */; };
+		69EFA8D01AD6259D000D2F0D /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69EFA8CF1AD6259D000D2F0D /* IOKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69E62E8B1AD5D22900F7B4EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69A99A591AC8E6A9008071EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69E62E6C1AD5C83400F7B4EE;
+			remoteInfo = gcusbrumble;
+		};
+		69E932B31AD83FE700AFCD10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69A99A591AC8E6A9008071EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69E932A71AD83F0700AFCD10;
+			remoteInfo = gcusbadapter_raw;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		69EFA8CB1AD6207E000D2F0D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				69E932A11AD82EF900AFCD10 /* gcusbrumble.bundle in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		69A99A621AC8E6A9008071EC /* gcusbadapter.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gcusbadapter.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		69A99A661AC8E6A9008071EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69A99A671AC8E6A9008071EC /* gcusbadapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gcusbadapter.h; sourceTree = "<group>"; };
+		69A99A691AC8E6A9008071EC /* gcusbadapter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gcusbadapter.cpp; sourceTree = "<group>"; };
+		69E62E671AD5C6A100F7B4EE /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		69E62E6D1AD5C83400F7B4EE /* gcusbrumble.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gcusbrumble.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		69E62E711AD5C83400F7B4EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69E62E721AD5C83400F7B4EE /* gcusbrumbleProj.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = gcusbrumbleProj.xcconfig; sourceTree = "<group>"; };
+		69E62E731AD5C83400F7B4EE /* gcusbrumbleTarget.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = gcusbrumbleTarget.xcconfig; sourceTree = "<group>"; };
+		69E62E741AD5C83400F7B4EE /* gcusbrumble.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gcusbrumble.h; sourceTree = "<group>"; };
+		69E62E761AD5C83400F7B4EE /* gcusbrumblePriv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gcusbrumblePriv.h; sourceTree = "<group>"; };
+		69E62E781AD5C83400F7B4EE /* gcusbrumble.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gcusbrumble.c; sourceTree = "<group>"; };
+		69E62E7D1AD5C93D00F7B4EE /* ForceFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ForceFeedback.framework; path = System/Library/Frameworks/ForceFeedback.framework; sourceTree = SDKROOT; };
+		69E932A81AD83F0700AFCD10 /* gcusbadapter_raw.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gcusbadapter_raw.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		69E932AB1AD83F0700AFCD10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69E932AC1AD83F0700AFCD10 /* gcusbadapter_raw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gcusbadapter_raw.c; sourceTree = "<group>"; };
+		69E932B11AD83F4300AFCD10 /* Info_raw.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info_raw.plist; path = gcusbadapter/Info_raw.plist; sourceTree = "<group>"; };
+		69EFA8C51AD61F70000D2F0D /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
+		69EFA8C91AD62058000D2F0D /* System.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = System.framework; path = System/Library/Frameworks/System.framework; sourceTree = SDKROOT; };
+		69EFA8CF1AD6259D000D2F0D /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69A99A5E1AC8E6A9008071EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69E62E6A1AD5C83400F7B4EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69E62E6E1AD5C83400F7B4EE /* CoreFoundation.framework in Frameworks */,
+				69E62E7E1AD5C93D00F7B4EE /* ForceFeedback.framework in Frameworks */,
+				69EFA8D01AD6259D000D2F0D /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69E932A41AD83F0700AFCD10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		69A99A581AC8E6A9008071EC = {
+			isa = PBXGroup;
+			children = (
+				69E932A21AD83ED400AFCD10 /* gcusbadapter_codeless */,
+				69E62E6F1AD5C83400F7B4EE /* gcusbrumble */,
+				69A99A641AC8E6A9008071EC /* gcusbadapter */,
+				69E932A91AD83F0700AFCD10 /* gcusbadapter_raw */,
+				69A99A631AC8E6A9008071EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		69A99A631AC8E6A9008071EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69A99A621AC8E6A9008071EC /* gcusbadapter.kext */,
+				69E62E6D1AD5C83400F7B4EE /* gcusbrumble.bundle */,
+				69E932A81AD83F0700AFCD10 /* gcusbadapter_raw.kext */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69A99A641AC8E6A9008071EC /* gcusbadapter */ = {
+			isa = PBXGroup;
+			children = (
+				69A99A671AC8E6A9008071EC /* gcusbadapter.h */,
+				69A99A691AC8E6A9008071EC /* gcusbadapter.cpp */,
+				69F268841AC8FE2300F38B6F /* Frameworks */,
+				69A99A651AC8E6A9008071EC /* Supporting Files */,
+			);
+			path = gcusbadapter;
+			sourceTree = "<group>";
+		};
+		69A99A651AC8E6A9008071EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				69A99A661AC8E6A9008071EC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		69E62E6F1AD5C83400F7B4EE /* gcusbrumble */ = {
+			isa = PBXGroup;
+			children = (
+				69E62E721AD5C83400F7B4EE /* gcusbrumbleProj.xcconfig */,
+				69E62E731AD5C83400F7B4EE /* gcusbrumbleTarget.xcconfig */,
+				69E62E741AD5C83400F7B4EE /* gcusbrumble.h */,
+				69E62E761AD5C83400F7B4EE /* gcusbrumblePriv.h */,
+				69E62E781AD5C83400F7B4EE /* gcusbrumble.c */,
+				69E932A01AD81D1C00AFCD10 /* Frameworks */,
+				69E62E701AD5C83400F7B4EE /* Supporting Files */,
+			);
+			path = gcusbrumble;
+			sourceTree = "<group>";
+		};
+		69E62E701AD5C83400F7B4EE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				69E62E711AD5C83400F7B4EE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		69E932A01AD81D1C00AFCD10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69EFA8CF1AD6259D000D2F0D /* IOKit.framework */,
+				69EFA8C91AD62058000D2F0D /* System.framework */,
+				69E62E7D1AD5C93D00F7B4EE /* ForceFeedback.framework */,
+				69E62E671AD5C6A100F7B4EE /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69E932A21AD83ED400AFCD10 /* gcusbadapter_codeless */ = {
+			isa = PBXGroup;
+			children = (
+				69E932B11AD83F4300AFCD10 /* Info_raw.plist */,
+			);
+			name = gcusbadapter_codeless;
+			sourceTree = "<group>";
+		};
+		69E932A91AD83F0700AFCD10 /* gcusbadapter_raw */ = {
+			isa = PBXGroup;
+			children = (
+				69E932AC1AD83F0700AFCD10 /* gcusbadapter_raw.c */,
+				69E932AA1AD83F0700AFCD10 /* Supporting Files */,
+			);
+			path = gcusbadapter_raw;
+			sourceTree = "<group>";
+		};
+		69E932AA1AD83F0700AFCD10 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				69E932AB1AD83F0700AFCD10 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		69F268841AC8FE2300F38B6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69EFA8C51AD61F70000D2F0D /* Kernel.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		69A99A5F1AC8E6A9008071EC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69A99A681AC8E6A9008071EC /* gcusbadapter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69E62E6B1AD5C83400F7B4EE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69E62E751AD5C83400F7B4EE /* gcusbrumble.h in Headers */,
+				69E62E771AD5C83400F7B4EE /* gcusbrumblePriv.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69E932A51AD83F0700AFCD10 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		69A99A611AC8E6A9008071EC /* gcusbadapter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69A99A6D1AC8E6A9008071EC /* Build configuration list for PBXNativeTarget "gcusbadapter" */;
+			buildPhases = (
+				69A99A5D1AC8E6A9008071EC /* Sources */,
+				69A99A5E1AC8E6A9008071EC /* Frameworks */,
+				69A99A5F1AC8E6A9008071EC /* Headers */,
+				69EFA8CB1AD6207E000D2F0D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69E932B41AD83FE700AFCD10 /* PBXTargetDependency */,
+				69E62E8C1AD5D22900F7B4EE /* PBXTargetDependency */,
+			);
+			name = gcusbadapter;
+			productName = gcusb;
+			productReference = 69A99A621AC8E6A9008071EC /* gcusbadapter.kext */;
+			productType = "com.apple.product-type.kernel-extension";
+		};
+		69E62E6C1AD5C83400F7B4EE /* gcusbrumble */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69E62E7A1AD5C83400F7B4EE /* Build configuration list for PBXNativeTarget "gcusbrumble" */;
+			buildPhases = (
+				69E62E691AD5C83400F7B4EE /* Sources */,
+				69E62E6A1AD5C83400F7B4EE /* Frameworks */,
+				69E62E6B1AD5C83400F7B4EE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gcusbrumble;
+			productName = gcusbrumble;
+			productReference = 69E62E6D1AD5C83400F7B4EE /* gcusbrumble.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		69E932A71AD83F0700AFCD10 /* gcusbadapter_raw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69E932AE1AD83F0700AFCD10 /* Build configuration list for PBXNativeTarget "gcusbadapter_raw" */;
+			buildPhases = (
+				69E932A31AD83F0700AFCD10 /* Sources */,
+				69E932A41AD83F0700AFCD10 /* Frameworks */,
+				69E932A51AD83F0700AFCD10 /* Headers */,
+				69E932A61AD83F0700AFCD10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gcusbadapter_raw;
+			productName = gcusbadapter_raw;
+			productReference = 69E932A81AD83F0700AFCD10 /* gcusbadapter_raw.kext */;
+			productType = "com.apple.product-type.kernel-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		69A99A591AC8E6A9008071EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = None;
+				TargetAttributes = {
+					69A99A611AC8E6A9008071EC = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					69E62E6C1AD5C83400F7B4EE = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					69E932A71AD83F0700AFCD10 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = 69A99A5C1AC8E6A9008071EC /* Build configuration list for PBXProject "gcusbadapter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 69A99A581AC8E6A9008071EC;
+			productRefGroup = 69A99A631AC8E6A9008071EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				69A99A611AC8E6A9008071EC /* gcusbadapter */,
+				69E62E6C1AD5C83400F7B4EE /* gcusbrumble */,
+				69E932A71AD83F0700AFCD10 /* gcusbadapter_raw */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		69E932A61AD83F0700AFCD10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69E932B21AD83F4300AFCD10 /* Info_raw.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69A99A5D1AC8E6A9008071EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69A99A6A1AC8E6A9008071EC /* gcusbadapter.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69E62E691AD5C83400F7B4EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69E62E791AD5C83400F7B4EE /* gcusbrumble.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69E932A31AD83F0700AFCD10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69E932AD1AD83F0700AFCD10 /* gcusbadapter_raw.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69E62E8C1AD5D22900F7B4EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69E62E6C1AD5C83400F7B4EE /* gcusbrumble */;
+			targetProxy = 69E62E8B1AD5D22900F7B4EE /* PBXContainerItemProxy */;
+		};
+		69E932B41AD83FE700AFCD10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69E932A71AD83F0700AFCD10 /* gcusbadapter_raw */;
+			targetProxy = 69E932B31AD83FE700AFCD10 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		69A99A6B1AC8E6A9008071EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		69A99A6C1AC8E6A9008071EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		69A99A6E1AC8E6A9008071EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0d1;
+				INFOPLIST_FILE = gcusbadapter/Info.plist;
+				MODULE_NAME = com.eno.gcusb;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_NAME = gcusbadapter;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Debug;
+		};
+		69A99A6F1AC8E6A9008071EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0d1;
+				INFOPLIST_FILE = gcusbadapter/Info.plist;
+				MODULE_NAME = com.eno.gcusb;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_NAME = gcusbadapter;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Release;
+		};
+		69E62E7B1AD5C83400F7B4EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = gcusbrumble/Info.plist;
+				PRODUCT_NAME = gcusbrumble;
+			};
+			name = Debug;
+		};
+		69E62E7C1AD5C83400F7B4EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = gcusbrumble/Info.plist;
+				PRODUCT_NAME = gcusbrumble;
+			};
+			name = Release;
+		};
+		69E932AF1AD83F0700AFCD10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = gcusbadapter/Info_raw.plist;
+				MODULE_NAME = com.eno.gcusbadapter_raw;
+				MODULE_START = gcusbadapter_raw_start;
+				MODULE_STOP = gcusbadapter_raw_stop;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Debug;
+		};
+		69E932B01AD83F0700AFCD10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = gcusbadapter/Info_raw.plist;
+				MODULE_NAME = com.eno.gcusbadapter_raw;
+				MODULE_START = gcusbadapter_raw_start;
+				MODULE_STOP = gcusbadapter_raw_stop;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69A99A5C1AC8E6A9008071EC /* Build configuration list for PBXProject "gcusbadapter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69A99A6B1AC8E6A9008071EC /* Debug */,
+				69A99A6C1AC8E6A9008071EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69A99A6D1AC8E6A9008071EC /* Build configuration list for PBXNativeTarget "gcusbadapter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69A99A6E1AC8E6A9008071EC /* Debug */,
+				69A99A6F1AC8E6A9008071EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69E62E7A1AD5C83400F7B4EE /* Build configuration list for PBXNativeTarget "gcusbrumble" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69E62E7B1AD5C83400F7B4EE /* Debug */,
+				69E62E7C1AD5C83400F7B4EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69E932AE1AD83F0700AFCD10 /* Build configuration list for PBXNativeTarget "gcusbadapter_raw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69E932AF1AD83F0700AFCD10 /* Debug */,
+				69E932B01AD83F0700AFCD10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 69A99A591AC8E6A9008071EC /* Project object */;
+}
