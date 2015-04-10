@@ -15,7 +15,6 @@
 		69E62E791AD5C83400F7B4EE /* gcusbrumble.c in Sources */ = {isa = PBXBuildFile; fileRef = 69E62E781AD5C83400F7B4EE /* gcusbrumble.c */; };
 		69E62E7E1AD5C93D00F7B4EE /* ForceFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E62E7D1AD5C93D00F7B4EE /* ForceFeedback.framework */; };
 		69E932A11AD82EF900AFCD10 /* gcusbrumble.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69E62E6D1AD5C83400F7B4EE /* gcusbrumble.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		69E932AD1AD83F0700AFCD10 /* gcusbadapter_raw.c in Sources */ = {isa = PBXBuildFile; fileRef = 69E932AC1AD83F0700AFCD10 /* gcusbadapter_raw.c */; };
 		69E932B21AD83F4300AFCD10 /* Info_raw.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69E932B11AD83F4300AFCD10 /* Info_raw.plist */; };
 		69EFA8D01AD6259D000D2F0D /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69EFA8CF1AD6259D000D2F0D /* IOKit.framework */; };
 /* End PBXBuildFile section */
@@ -65,8 +64,6 @@
 		69E62E781AD5C83400F7B4EE /* gcusbrumble.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gcusbrumble.c; sourceTree = "<group>"; };
 		69E62E7D1AD5C93D00F7B4EE /* ForceFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ForceFeedback.framework; path = System/Library/Frameworks/ForceFeedback.framework; sourceTree = SDKROOT; };
 		69E932A81AD83F0700AFCD10 /* gcusbadapter_raw.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gcusbadapter_raw.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		69E932AB1AD83F0700AFCD10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69E932AC1AD83F0700AFCD10 /* gcusbadapter_raw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gcusbadapter_raw.c; sourceTree = "<group>"; };
 		69E932B11AD83F4300AFCD10 /* Info_raw.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info_raw.plist; path = gcusbadapter/Info_raw.plist; sourceTree = "<group>"; };
 		69EFA8C51AD61F70000D2F0D /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
 		69EFA8C91AD62058000D2F0D /* System.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = System.framework; path = System/Library/Frameworks/System.framework; sourceTree = SDKROOT; };
@@ -107,7 +104,6 @@
 				69E932A21AD83ED400AFCD10 /* gcusbadapter_codeless */,
 				69E62E6F1AD5C83400F7B4EE /* gcusbrumble */,
 				69A99A641AC8E6A9008071EC /* gcusbadapter */,
-				69E932A91AD83F0700AFCD10 /* gcusbadapter_raw */,
 				69A99A631AC8E6A9008071EC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -180,23 +176,6 @@
 				69E932B11AD83F4300AFCD10 /* Info_raw.plist */,
 			);
 			name = gcusbadapter_codeless;
-			sourceTree = "<group>";
-		};
-		69E932A91AD83F0700AFCD10 /* gcusbadapter_raw */ = {
-			isa = PBXGroup;
-			children = (
-				69E932AC1AD83F0700AFCD10 /* gcusbadapter_raw.c */,
-				69E932AA1AD83F0700AFCD10 /* Supporting Files */,
-			);
-			path = gcusbadapter_raw;
-			sourceTree = "<group>";
-		};
-		69E932AA1AD83F0700AFCD10 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				69E932AB1AD83F0700AFCD10 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		69F268841AC8FE2300F38B6F /* Frameworks */ = {
@@ -364,7 +343,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69E932AD1AD83F0700AFCD10 /* gcusbadapter_raw.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
