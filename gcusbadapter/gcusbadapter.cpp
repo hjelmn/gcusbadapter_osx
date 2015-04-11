@@ -118,7 +118,7 @@ bool GCUSBAdapter::start(IOService *provider) {
         }
 
         /* Allocate a buffer for rumble reports */
-        _rumble_descriptor = IOBufferMemoryDescriptor::withCapacity(6, kIODirectionIn);
+        _rumble_descriptor = IOBufferMemoryDescriptor::withCapacity(6, kIODirectionOut);
         if (nullptr == _rumble_descriptor) {
             break;
         }
