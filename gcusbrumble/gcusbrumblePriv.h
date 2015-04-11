@@ -1,4 +1,4 @@
-/* -*- Mode: C++; indent-tabs-mode:nil; c-basic-offset:4 -*- */
+/* -*- Mode: C; indent-tabs-mode:nil; c-basic-offset:4 -*- */
 /*
  * driver for WUP-028 GameCube USB adapter CFPlugIn Bundle
  * Copyright © 2015 Nathan Hjelm <hjelmn@cs.unm.edu>
