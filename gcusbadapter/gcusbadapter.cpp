@@ -110,13 +110,6 @@ bool GCUSBAdapter::start(IOService *provider) {
             break;
         }
 
-        /* initialize the rumble report */
-        /* report 0x11 is the rumble report */
-        _rumble_data[0] = 0x11;
-        for (int i = 0 ; i < 4 ; ++i) {
-            _rumble_data[1 + i] = 0;
-        }
-
         /* Allocate a buffer for rumble reports */
         _rumble_descriptor = IOBufferMemoryDescriptor::withCapacity(6, kIODirectionOut);
         if (nullptr == _rumble_descriptor) {

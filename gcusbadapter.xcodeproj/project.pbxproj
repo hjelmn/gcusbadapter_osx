@@ -15,7 +15,6 @@
 		69E62E791AD5C83400F7B4EE /* gcusbrumble.c in Sources */ = {isa = PBXBuildFile; fileRef = 69E62E781AD5C83400F7B4EE /* gcusbrumble.c */; };
 		69E62E7E1AD5C93D00F7B4EE /* ForceFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E62E7D1AD5C93D00F7B4EE /* ForceFeedback.framework */; };
 		69E932A11AD82EF900AFCD10 /* gcusbrumble.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69E62E6D1AD5C83400F7B4EE /* gcusbrumble.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		69E932B21AD83F4300AFCD10 /* Info_raw.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69E932B11AD83F4300AFCD10 /* Info_raw.plist */; };
 		69EFA8D01AD6259D000D2F0D /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69EFA8CF1AD6259D000D2F0D /* IOKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -316,7 +315,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69E932B21AD83F4300AFCD10 /* Info_raw.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +441,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0.0d1;
 				INFOPLIST_FILE = gcusbadapter/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MODULE_NAME = com.eno.gcusb;
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_NAME = gcusbadapter;
@@ -457,6 +456,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0.0d1;
 				INFOPLIST_FILE = gcusbadapter/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MODULE_NAME = com.eno.gcusb;
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_NAME = gcusbadapter;
@@ -473,6 +473,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = gcusbrumble/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = gcusbrumble;
 			};
 			name = Debug;
@@ -482,6 +483,7 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = gcusbrumble/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = gcusbrumble;
 			};
 			name = Release;
@@ -495,6 +497,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = gcusbadapter/Info_raw.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MODULE_NAME = com.eno.gcusbadapter_raw;
 				MODULE_START = gcusbadapter_raw_start;
 				MODULE_STOP = gcusbadapter_raw_stop;
@@ -509,6 +512,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = gcusbadapter/Info_raw.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MODULE_NAME = com.eno.gcusbadapter_raw;
 				MODULE_START = gcusbadapter_raw_start;
 				MODULE_STOP = gcusbadapter_raw_stop;
@@ -555,6 +559,7 @@
 				69E932B01AD83F0700AFCD10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

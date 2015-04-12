@@ -40,7 +40,8 @@ public:
     IOReturn setRumble (int port, int data);
 private:
     void cleanup (void);
-    uint8_t _rumble_data[5];
+    /* report 0x11 is the rumble report */
+    uint8_t _rumble_data[5] = {0x11, 0x00, 0x00, 0x00, 0x00};
     IOBufferMemoryDescriptor *_vreports[4] = {nullptr, nullptr, nullptr, nullptr};
     IOBufferMemoryDescriptor *_rumble_descriptor = nullptr;
     GCUSBAdapterPort *_ports[4] = {nullptr, nullptr, nullptr, nullptr};
