@@ -227,7 +227,7 @@ static HRESULT gcusbrumble_download_effect (void *self, CFUUIDRef effectType, FF
         return FFERR_OUTOFMEMORY;
     }
 
-    *pDownloadID = 1;
+    *pDownloadID = effect_index + 1;
 
     if (FF_INFINITE != pEffect->dwDuration) {
         /* duration is in us */
@@ -328,8 +328,8 @@ static HRESULT gcusbrumble_send_force_feedback_command (void *self, FFCommandFla
             gcusbrumble_destroy_timer (rumble->effects);
             break;
     case FFSFFC_STOPALL:
+            gcusbrumble_stop_effect (self, 1);
             rumble->state = FFGFFS_STOPPED;
-            rumble->effects[0].status = FFEGES_NOTPLAYING;
             break;
     case FFSFFC_SETACTUATORSOFF:
             rumble->state |= FFGFFS_ACTUATORSOFF;
