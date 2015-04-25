@@ -94,19 +94,9 @@ bool GCUSBAdapter::start(IOService *provider) {
         setReport(startReport, kIOHIDReportTypeOutput, 0);
         startReport->release ();
 
-        /* Allocate buffers for each controller report */
-        for (int i = 0 ; i < 4 ; ++i) {
-            unsigned char report_id = 0x50;
-            _vreports[i] = IOBufferMemoryDescriptor::withCapacity(9, kIODirectionIn);
-            if (nullptr == _vreports[i]) {
-                ret = false;
-                break;
-            }
-
-            _vreports[i]->writeBytes(0, &report_id, 1);
-        }
-
-        if (!ret) {
+        /* Allocate buffer for virtual report */
+        _vreport = IOBufferMemoryDescriptor::withCapacity(9, kIODirectionIn);
+        if (nullptr == _vreport) {
             break;
         }
 
@@ -125,12 +115,12 @@ bool GCUSBAdapter::start(IOService *provider) {
 }
 
 void GCUSBAdapter::cleanup (void) {
+    if (_vreport) {
+        _vreport->release();
+        _vreport = nullptr;
+    }
+    
     for (int i = 0 ; i < 4 ; ++i) {
-        if (_vreports[i]) {
-            _vreports[i]->release();
-            _vreports[i] = nullptr;
-        }
-
         if (_ports[i]) {
             _ports[i]->terminate();
             _ports[i]->release ();
@@ -181,7 +171,7 @@ IOReturn GCUSBAdapter::handleReportWithTime (AbsoluteTime timeStamp, IOMemoryDes
             report->readBytes(1 + i * 9, report_data, 9);
             if (report_data[0]) {
                 if (!_ports[i]) {
-                    GCUSBAdapterPort *newPort = GCUSBAdapterPort::withAdapter(this, i);
+                    GCUSBAdapterPort *newPort = GCUSBAdapterPort::withAdapter(this, i, report_data[0]);
                     if (!newPort) {
                         IOLog ("Could not create GCUSBAdapterPort for port %d\n", i);
                         continue;
@@ -202,13 +192,14 @@ IOReturn GCUSBAdapter::handleReportWithTime (AbsoluteTime timeStamp, IOMemoryDes
 
                 /* rescale analog sticks to elimitate bias. other sticks may
                  * have different biases */
+                report_data[0] = 0x50; /* report id */
                 report_data[3] = (uint8_t)((int8_t)report_data[3] - 122);
                 report_data[4] = (uint8_t)((int8_t)report_data[4] - 144);
                 report_data[5] = (uint8_t)((int8_t)report_data[5] - 133);
                 report_data[6] = (uint8_t)((int8_t)report_data[6] - 133);
 
-                _vreports[i]->writeBytes(1, report_data + 1, 8);
-                int ret = _ports[i]->handleReport(_vreports[i]);
+                _vreport->writeBytes(1, report_data, 9);
+                int ret = _ports[i]->handleReport(_vreport);
                 if (kIOReturnSuccess != ret) {
                     return ret;
                 }
@@ -229,10 +220,10 @@ IOReturn GCUSBAdapter::handleReportWithTime (AbsoluteTime timeStamp, IOMemoryDes
 
 OSDefineMetaClassAndStructors(GCUSBAdapterPort, super);
 
-GCUSBAdapterPort *GCUSBAdapterPort::withAdapter (GCUSBAdapter *adapter, int port) {
+GCUSBAdapterPort *GCUSBAdapterPort::withAdapter (GCUSBAdapter *adapter, int port, uint8_t type) {
     GCUSBAdapterPort *newPort = new GCUSBAdapterPort;
 
-    if (newPort && !newPort->init (adapter, port)) {
+    if (newPort && !newPort->init (adapter, port, type)) {
         newPort->release();
         return nullptr;
     }
@@ -240,7 +231,7 @@ GCUSBAdapterPort *GCUSBAdapterPort::withAdapter (GCUSBAdapter *adapter, int port
     return newPort;
 }
 
-bool GCUSBAdapterPort::init (GCUSBAdapter *adapter, int port) {
+bool GCUSBAdapterPort::init (GCUSBAdapter *adapter, int port, uint8_t type) {
     OSDictionary *plugin_types;
 
     if (!super::init()) {
@@ -263,6 +254,7 @@ bool GCUSBAdapterPort::init (GCUSBAdapter *adapter, int port) {
     _rumble = 0;
     _port = port;
     _adapter = adapter;
+    _type = type;
 
     return true;
 }
@@ -298,7 +290,11 @@ IOReturn GCUSBAdapterPort::getReport (IOMemoryDescriptor *report, IOHIDReportTyp
 
 OSString *GCUSBAdapterPort::newProductString() const {
     char product_name[64];
-    snprintf (product_name, 64, "GameCube Controller %d", _port + 1);
+    if (GCUSBControllerTypeNormal == _type) {
+        snprintf (product_name, 64, "GameCube Wired Controller %d", _port + 1);
+    } else if (GCUSBControllerTypeWaveBird == _type) {
+        snprintf (product_name, 64, "GameCube WaveBird Controller %d", _port + 1);
+    }
     return OSString::withCString(product_name);
 }
 

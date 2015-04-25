@@ -27,6 +27,18 @@
 
 class GCUSBAdapterPort;
 
+/**
+ * Controller types
+ */
+enum {
+    /** No controller is connected */
+    GCUSBControllerTypeNone     = 0x00,
+    /** Normal (wired) controller */
+    GCUSBControllerTypeNormal   = 0x10,
+    /** Nintendo WaveBird */
+    GCUSBControllerTypeWaveBird = 0x20,
+};
+
 class GCUSBAdapter : public IOUSBHIDDriver {
     OSDeclareDefaultStructors(GCUSBAdapter);
 public:
@@ -42,7 +54,7 @@ private:
     void cleanup (void);
     /* report 0x11 is the rumble report */
     uint8_t _rumble_data[5] = {0x11, 0x00, 0x00, 0x00, 0x00};
-    IOBufferMemoryDescriptor *_vreports[4] = {nullptr, nullptr, nullptr, nullptr};
+    IOBufferMemoryDescriptor *_vreport = nullptr;
     IOBufferMemoryDescriptor *_rumble_descriptor = nullptr;
     GCUSBAdapterPort *_ports[4] = {nullptr, nullptr, nullptr, nullptr};
 };
@@ -50,8 +62,8 @@ private:
 class GCUSBAdapterPort : public IOHIDDevice {
     OSDeclareDefaultStructors(GCUSBAdapterPort);
 public:
-    static GCUSBAdapterPort *withAdapter (GCUSBAdapter *adapter, int port);
-    bool init (GCUSBAdapter *adapter, int port);
+    static GCUSBAdapterPort *withAdapter (GCUSBAdapter *adapter, int port, uint8_t type);
+    bool init (GCUSBAdapter *adapter, int port, uint8_t type);
 
     virtual IOReturn newReportDescriptor(IOMemoryDescriptor ** desc) const;
     virtual IOReturn getReport (IOMemoryDescriptor *report, IOHIDReportType reportType,
@@ -71,7 +83,7 @@ public:
 
 private:
     GCUSBAdapter *_adapter;
-    int _port, _rumble;
+    int _port, _rumble, _type;
 };
 
 
