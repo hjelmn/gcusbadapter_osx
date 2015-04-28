@@ -96,13 +96,10 @@ bool GCUSBAdapter::start(IOService *provider) {
 
         /* Allocate buffer for virtual report */
         _vreport = IOBufferMemoryDescriptor::withCapacity(9, kIODirectionIn);
-        if (nullptr == _vreport) {
-            break;
-        }
 
         /* Allocate a buffer for rumble reports */
         _rumble_descriptor = IOBufferMemoryDescriptor::withCapacity(6, kIODirectionOut);
-        if (nullptr == _rumble_descriptor) {
+        if (nullptr == _vreport || nullptr == _rumble_descriptor) {
             break;
         }
 
