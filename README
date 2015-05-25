@@ -9,3 +9,6 @@ gcusbadapter.kext exposes the WUP-028 as 4 virtual gamepads with force-feedback
 support. The virual gamepads are created/destroyed as controllers are plugged in/
 unplugged from the WUP-028.
 
+A signed version of this extension is not availble because it is Apple's
+ridiculous policy that only the hardware vendor is allowed to sign a kernel
+device driver. Thank you Apple!
